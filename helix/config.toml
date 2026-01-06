@@ -1,0 +1,27 @@
+#theme = "ayu_light"
+#theme = "ayu_mirage_transparent"
+#theme = "flatwhite_transparent"
+theme = "github_dark_transparent"
+
+[editor]
+line-number = "relative"
+
+[editor.statusline]
+left = ["mode", "spinner", "position-percentage"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+diagnostics = ["warning", "error"]
+workspace-diagnostics = ["warning", "error"]
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "block"
+
+[keys.normal]
+"$" = "goto_line_end"
+"0" = "goto_line_start"

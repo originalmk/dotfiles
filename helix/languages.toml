@@ -1,0 +1,4 @@
+[[language]]
+name = "elixir"
+indent = { tab-width = 2, unit = " " }
+auto-format = true
