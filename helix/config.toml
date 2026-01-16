@@ -5,6 +5,7 @@ theme = "github_dark_transparent"
 
 [editor]
 line-number = "relative"
+rulers = [80]
 
 [editor.statusline]
 left = ["mode", "spinner", "position-percentage"]
