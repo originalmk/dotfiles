@@ -1,5 +1,6 @@
 require("config.lazy")
 require("lualine").setup()
+require("originalmk")
 
 vim.cmd[[colorscheme tokyonight]]
 vim.opt.number = true
