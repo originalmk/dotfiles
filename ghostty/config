@@ -21,7 +21,7 @@
 # # separated by equals signs.
 #font-family = JetBrains Mono Regular
 font-family = ComicShannsMono Nerd Font Mono
-font-size = 15
+font-size = 14
 # window-padding-x = 2
 #
 # # Spacing around the equals sign does not matter.
@@ -46,6 +46,6 @@ font-size = 15
 
 #theme = dark:Xcode Dark,light:Xcode Light
 #theme = dark:Gitlab Dark,light:Gitlab Light
-theme = dark:atom,light:atom
-background-opacity = 0.9
-background-blur-radius = 40
+theme = dark:Atom,light:Atom
+background-opacity = 0.8
+background-blur-radius = 1
