@@ -10,8 +10,23 @@ vim.opt.colorcolumn = "80"
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#444b6a" })
 vim.opt.scrolloff = 8
 vim.lsp.enable("gopls")
+
+vim.lsp.config('elixirls', {
+    cmd = { "elixir-ls" };
+})
+vim.lsp.enable("elixirls")
+
 vim.diagnostic.config({
 	virtual_text = true
+})
+
+require('nvim-treesitter').install({ 'elixir', 'go' }):wait(300000)
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "elixir", "heex", "go" },
+	callback = function()
+		vim.treesitter.start()
+	end,
 })
 
 -- Native way of setting up automcpletion

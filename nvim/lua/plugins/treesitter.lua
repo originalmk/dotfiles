@@ -1,5 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  lazy = false,
   build = ":TSUpdate",
   config = function()
     local treesitter = require("nvim-treesitter.config")
@@ -31,6 +32,8 @@ return {
         "dockerfile",
         "gitignore",
         "query",
+	"elixir",
+	"go",
       },
     })
   end,
