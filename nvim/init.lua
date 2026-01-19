@@ -20,10 +20,10 @@ vim.diagnostic.config({
 	virtual_text = true
 })
 
-require('nvim-treesitter').install({ 'elixir', 'go' }):wait(300000)
+require('nvim-treesitter').install({ 'elixir', 'go', 'markdown' }):wait(300000)
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "elixir", "heex", "go" },
+	pattern = { "elixir", "heex", "go", "markdown" },
 	callback = function()
 		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 		vim.treesitter.start()

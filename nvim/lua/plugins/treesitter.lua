@@ -34,6 +34,7 @@ return {
         "query",
 	"elixir",
 	"go",
+	"markdown",
       },
     })
   end,
