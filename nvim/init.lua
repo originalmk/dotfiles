@@ -9,25 +9,35 @@ vim.opt.wrap = false
 vim.opt.colorcolumn = "80"
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#444b6a" })
 vim.opt.scrolloff = 8
-vim.lsp.enable("gopls")
 
+vim.lsp.enable("gopls")
 vim.lsp.config('elixirls', {
     cmd = { "elixir-ls" };
 })
 vim.lsp.enable("elixirls")
+vim.lsp.enable("ocamllsp")
+vim.lsp.enable("ols")
+vim.lsp.enable("zls")
 
 vim.diagnostic.config({
 	virtual_text = true
 })
 
-require('nvim-treesitter').install({ 'elixir', 'go', 'markdown' }):wait(300000)
+require('nvim-treesitter').install({ 'elixir', 'go', 'markdown', 'ocaml', 'odin', 'zig' }):wait(300000)
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "elixir", "heex", "go", "markdown" },
+	pattern = { "elixir", "heex", "go", "markdown", "ocaml", "odin", "zig" },
 	callback = function()
 		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 		vim.treesitter.start()
 	end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    vim.lsp.buf.format()
+  end,
 })
 
 -- configuration
