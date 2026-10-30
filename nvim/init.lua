@@ -77,6 +77,11 @@ require("nvim-treesitter-textobjects").setup {
   },
 }
 
+-- Copying to system clipboard
+
+vim.g.mapleader = " "
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
+
 -- keymaps
 -- You can use the capture groups defined in `textobjects.scm`
 vim.keymap.set({ "x", "o" }, "am", function()
