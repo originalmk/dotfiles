@@ -6,7 +6,7 @@ vim.cmd[[colorscheme tokyonight]]
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#444b6a" })
 vim.opt.scrolloff = 8
 
@@ -18,15 +18,18 @@ vim.lsp.enable("elixirls")
 vim.lsp.enable("ocamllsp")
 vim.lsp.enable("ols")
 vim.lsp.enable("zls")
+vim.lsp.enable("pylsp")
+vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("julials")
 
 vim.diagnostic.config({
 	virtual_text = true
 })
 
-require('nvim-treesitter').install({ 'elixir', 'go', 'markdown', 'ocaml', 'odin', 'zig' }):wait(300000)
+require('nvim-treesitter').install({ 'elixir', 'go', 'markdown', 'ocaml', 'odin', 'python', 'zig', 'rust', 'julia' }):wait(300000)
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "elixir", "heex", "go", "markdown", "ocaml", "odin", "zig" },
+	pattern = { "elixir", "heex", "go", "markdown", "ocaml", "odin", "python", "zig", "rust", "julia" },
 	callback = function()
 		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 		vim.treesitter.start()
